@@ -10,7 +10,8 @@ class TestBabySetMethods(unittest.TestCase):
         self.assertEqual(bset.size(), 2)
 
     def test_init_empty(self):
-        pass
+        bset = BabySet()
+        self.assertEqual(bset.size(), 0)
 
     def test_add(self):
         bset = BabySet([2, 4, 4])
@@ -23,15 +24,19 @@ class TestBabySetMethods(unittest.TestCase):
         self.assertEqual(bset.size(), 4)
 
     def test_get(self):
-    	bset = BabySet([2, 4, 4])
+        bset = BabySet([2, 4, 4])
         with self.assertRaises(KeyError):
             bset.get(3)
 
     def test_remove(self):
-        pass
+        bset = BabySet([2, 4, 4])
+        bset.remove(2)
+        self.assertEqual(bset.size(), 1)
 
     def test_clear(self):
-        pass
+        bset = BabySet([2, 4, 4])
+        bset.clear()
+        self.assertEqual(bset.size(), 0)
 
 if __name__ == '__main__':
     unittest.main()
